@@ -1,0 +1,31 @@
+<html>
+<head>
+  <script src="js/getTextFile.js"></script>
+  <script src="js/MniObjReader.js"></script>
+</head>
+<body>
+  <script>
+
+  var myWorker = new Worker("js/workerMniobjLoader.js");
+
+	myWorker.postMessage("models/gray_left_327680.obj");
+
+  myWorker.onmessage = function(e) {
+    var mniObjReaderInstance = e.data;
+
+    // the worker context removes all the methods from objects and keep
+    // only the data.
+    // in order to get the method back, we create a new MniObjReader and
+    // call its copy method. This is similar (in some point) to calling a
+    // copy constructor.
+    var mniObjReader = new MniObjReader();
+    mniObjReader.copy( mniObjReaderInstance );
+
+    console.log( mniObjReader )
+
+	};
+
+
+  </script>
+</body>
+</html>
