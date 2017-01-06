@@ -1,3 +1,5 @@
+[DEMO](http://mcgill.jonathanlurie.fr/mniobjReader/shapeWorker.html) (we always want to see the fancy demo before reading how it works, right?)
+
 # What is mniobj ?
 mniobj is a 3D mesh file specification made by the [Montreal Neurological Institute](https://www.mcgill.ca/neuro/about). For the web, we use(d) it mainly within [BrainBrowser](https://brainbrowser.cbrain.mcgill.ca) because it is convenient and simple to use to load 3D shapes in webGL.
 
@@ -38,7 +40,7 @@ In the next examples, especially if you click on the DEMO links, bear in mind th
 
 
 ## The almost sync way (AJAX, but no web workers)
-See `simple.html`. ([DEMO](http://mcgill.jonathanlurie.fr/mniobjReader/simple.html))  
+See `simple.html`. ([DEMO](http://mcgill.jonathanlurie.fr/mniobjReader/simple.html) with nothing visual)  
 
 Here is the foundation of using `MniObjReader`. First, create an instance and feed it:
 ```js
@@ -64,7 +66,7 @@ var surfaceProperties = mniObjReader.getSurfaceProperties(); // object
 ```
 
 ## The very async way (AJAX and web workers)
-See `simpleWorker.html`. ([DEMO](http://mcgill.jonathanlurie.fr/mniobjReader/simpleWorker.html))  
+See `simpleWorker.html`. ([DEMO](http://mcgill.jonathanlurie.fr/mniobjReader/simpleWorker.html) with nothing visual)  
 
 The thing with *web workers* is to run a piece of code on another thread so that it does not block the main app. This feature comes handy in a UX context, where your user may want to interact with all these fancy buttons while actually loading a big chunk of data: it will not freeze!  
 Unfortunately it comes with some downsides you have to know and pay attention to:
