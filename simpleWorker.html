@@ -4,6 +4,7 @@
   <script src="js/MniObjReader.js"></script>
 </head>
 <body>
+  <h1>Open your JS console</h1>
   <script>
 
   var myWorker = new Worker("js/workerMniobjLoader.js");
@@ -21,7 +22,16 @@
     var mniObjReader = new MniObjReader();
     mniObjReader.copy( mniObjReaderInstance );
 
-    console.log( mniObjReader )
+    // a whole lot of data, you may not use all of them
+    var shapeData = mniObjReader.getShapeData();
+    console.log(shapeData);
+
+    // these are the very interesting data you want to use:
+    var indices = mniObjReader.getShapeRawIndices(0); // Uint32Array
+    var positions = mniObjReader.getRawVertices();  // Float32Array
+    var normals = mniObjReader.getRawNormals(); // Float32Array
+    var colors = mniObjReader.getRawColors(); // Uint8Array
+    var surfaceProperties = mniObjReader.getSurfaceProperties(); // object
 
 	};
 

@@ -31,7 +31,7 @@
 	<body>
 
 		<div id="container"></div>
-		<div id="info"><a href="http://threejs.org" target="_blank">three.js</a> webgl - buffergeometry - uint</div>
+		<div id="info">The shape may take a while to load</div>
 
 		<script src="js/vendors/three.js"></script>
 
@@ -47,7 +47,6 @@
 
       // creating the worker
       var myWorker = new Worker("js/workerMniobjLoader.js");
-
 
 			var container, stats;
 
@@ -175,19 +174,6 @@
 
 
       function readMniobjFile( mniObjFilepath ){
-
-        /*
-        getTextFile( mniObjFilepath , function(data) {
-          var objReader = new MniObjReader();
-          objReader.parse( data );
-
-          var mesh = buildMeshFromObjReader( objReader );
-          objectContainer.add( mesh );
-
-        }, function(status) {
-        	console.log('Something went wrong.');
-        });
-        */
 
         myWorker.postMessage(mniObjFilepath);
 
