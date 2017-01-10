@@ -1,5 +1,8 @@
 [DEMO](http://mcgill.jonathanlurie.fr/mniobjReader/shapeWorker.html) (we always want to see the fancy demo before reading how it works, right?)
 
+# Is there an ES6 version?
+Yes, [here](https://github.com/jonathanlurie/mniobjReaderES6). The ES6 version uses ES6 classes while this version uses prototypes. Other than that, they are the same.
+
 # What is mniobj ?
 mniobj is a 3D mesh file specification made by the [Montreal Neurological Institute](https://www.mcgill.ca/neuro/about). For the web, we use(d) it mainly within [BrainBrowser](https://brainbrowser.cbrain.mcgill.ca) because it is convenient and simple to use to load 3D shapes in webGL.
 
